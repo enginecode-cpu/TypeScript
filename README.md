@@ -86,6 +86,32 @@ tsc --init
 
 <br>
 
+`compilerOptions` : tsc 명령 형식에서 옵션을 나타낸다.<br>
+
+`include` : 대상 파일 목록을 나타낸다.<br>
+
+`module` : 동작 대상 플랫폼이 웹 브라우저인지 Node js인지를 구분해 그에 맞는 모듈 방식으로
+컴파일 하려는 목적으로 설정한다. 플랫폼에 따라서 다음과 같이 값을 설정할 수 있다.
+
+<br>
+
+```
+웹 브라우저에서 동작: amd
+Node js에서 동작 : commonjs
+```
+
+<br>
+
+`moduleResolution` : `module` 카 값이 `commonjs`이면 항상 `node`로 설정한다.
+`module`이 `amd`이면 `classic`으로 설정<br>
+
+`target` : 트랜스파일할 JavaScript 버전을 설정한다.<br>
+
+`baseUrl`과 `outDir` : 트랜스 파일된 ES6 JavaScript 파일을 저장하는 디렉터리를 설정한다.
+tsc는 `tsconfig.json` 파일이 있는 디렉터리에서 실행된다.<br>
+
+<br>
+
 ## src 디렉터리와 소스 파일 만들기
 `tsconfig.json` 파일에서 `include` 항목이 있다. 
 `["src/**/*"]`이라는 값이 있는데, `./src` 디렉터리에 프로젝트의 모든 TypeScript 소스 파일이 있다는 뜻이다.
