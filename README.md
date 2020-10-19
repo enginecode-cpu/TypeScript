@@ -110,6 +110,20 @@ Node js에서 동작 : commonjs
 `baseUrl`과 `outDir` : 트랜스 파일된 ES6 JavaScript 파일을 저장하는 디렉터리를 설정한다.
 tsc는 `tsconfig.json` 파일이 있는 디렉터리에서 실행된다.<br>
 
+`paths` : 소스 파일의 `import` 문에서 `from` 부분을 해석할 때 찾아야하는 디렉터리를 설정한다.
+`import` 문이 찾아야 하는 소스가 외부 패키지이면 `node_modules` 디렉터리에서 찾아야하므로 키값에
+`node_modules/*`도 포함했다.<br>
+
+`esModuleInterop` : 오픈 소스 JavaScript 라이브러리 중에는 웹 브라우저에서 동작한다는 가정으로 만들어진
+것이 있는데, 이들은 CommonJS 방식으로 동작하는 TypeScript 코드에 혼란을 줄 수 있다.
+`chance`가 대표적이다. `chance` 패키지가 동작하려면 `esModuleInterop` 키 값을 반드시 `true`로 설정해야한다.<br>
+
+`sourceMap` : `sourceMap` 값이 `true`이면 트랜스 파일 디렉터리에는 `.js` 파일 이외에도 `.js.map` 파일이 만들어진다. 이 소스맵 파일은 변환된 JavaScript 코드가 TypeScript 코드의 어디에 해당하는지를 알려준다. 소스 맵 파일은 주로 디버깅할 때 사용된다.<br>
+
+`downlevelIteration` : `generator`를 사용하려면 반드시 `true`로 설정을 해야한다.<br>
+
+`noImplicitAny` : `false`로 설정하면 변수를 명시적으로 설정해주지 않다 `any` 타입으로 된다. 이것은 TypeScript의 장점이 아니므로, `true`로 설정하는 것이 좋다.<br>
+
 <br>
 
 ## src 디렉터리와 소스 파일 만들기
