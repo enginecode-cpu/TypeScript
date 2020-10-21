@@ -98,3 +98,23 @@ abstract class AbstractPerson5 {
     abstract name: string
     constructor(public age?: number) {}
 }
+
+/**
+ * 클래스의 상속
+ * extends 키워드를 사용해 상속 받는다.
+ * 
+ * class 상속 받는 클래스 extends 부모 클래스 {
+ *      ...
+ * }
+ * 
+ * 부모 클래스의 생성자를 super 키워드로 호출할 수 있다.
+ */
+
+class Person5 extends AbstractPerson5 {
+    constructor(public name: string, public age?: number) {
+        super(age);
+    }
+}
+
+let chulsoo = new Person5('김철수', 5);
+console.log(chulsoo);
