@@ -79,3 +79,22 @@ class Person4 implements IPerson4 {
 
 let jjang_gu: Person4 = new Person4('신짱구', 5);
 console.log(jjang_gu);
+
+/**
+ * 추상 클래스
+ * class 앞에 abstract를 붙여 사용한다.
+ * 추상 클래스는 나를 상속하는 다른 클래스에서
+ * 이 속성이나 메서드를 구현하게 한다.
+ * 
+ * abstract class 클래스 이름 {
+ *      abstract 속성 이름: 속성 타입
+ *      abstract 메서드 이름() {}
+ * }
+ * 
+ * 추상 클래스는 new 키워드를 통해서 객체를 만들 수 없다
+ */
+
+abstract class AbstractPerson5 {
+    abstract name: string
+    constructor(public age?: number) {}
+}
