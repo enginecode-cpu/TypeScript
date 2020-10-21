@@ -118,3 +118,20 @@ class Person5 extends AbstractPerson5 {
 
 let chulsoo = new Person5('김철수', 5);
 console.log(chulsoo);
+
+/**
+ * static 속성
+ * 
+ * class 클래스 이름 {
+ *      static 정적 속성 이름: 속성 타입
+ * }
+ * 
+ * 사용법
+ * 클래스 이름.정적 속성 이름
+ */
+
+class A {
+    static initValue = 1;
+}
+let initVal = A.initValue;
+console.log(initVal);
