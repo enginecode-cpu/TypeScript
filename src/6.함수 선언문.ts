@@ -17,3 +17,14 @@ function add(a: number, b: number): number {
 function print(name: string, age: number): void {
     console.log(`name: ${name}, age: ${age}`);
 }
+
+/**
+ * 함수 시그니쳐
+ * 함수의 타입을 시그니쳐라고 한다.
+ * 
+ * (매개변수1 타입, 매개변수2 타입, ...) => 반환값 타입
+ */
+
+let print2: (name: string, age: number) => void = function (name: string, age: number): void {
+    console.log(`name: ${name}, age: ${age}`);
+}
