@@ -41,3 +41,48 @@ let print2: (name: string, age: number) => void = function (name: string, age: n
 type stringNumberFunc = (stringValue: string, numberValue: number) => void;
 let f: stringNumberFunc = function(a: string, b: number): void {};
 let g: stringNumberFunc = function(c: string, d: number): void {};
+
+/**
+ * undefined 관련 주의 사항
+ * 
+ * interface INameable {
+ *      name: string
+ * }
+ * function getName(o: INameable) { return o.name; }
+ * 
+ * let n = getName(undefined);    // Error
+ * console.log(n);
+ * 
+ * 매개변수 값이 undefined인지 판별하는 코드를 작성해야한다.
+ */
+
+interface INameable {
+    name: string
+}
+function getName(o: INameable): string {
+    return o != undefined ? o.name : 'unknown name';
+}
+
+let unName = getName(undefined);
+console.log(unName);
+console.log(getName({ name: '신짱구' }));
+
+/**
+ * 선택 속성이 있을 경우
+ */
+
+interface IAgeable {
+    age?: number
+}
+function getAge(o: IAgeable): number {
+    return o != undefined && o.age ? o.age : 0;
+}
+
+console.log(getAge(undefined));
+console.log(getAge(null));
+console.log(getAge({ age: 35 }));
+
+/**
+ * undefined와 null
+ * 타입스크립트에서는 두 값이 완전 동일하다.
+ */
