@@ -86,3 +86,26 @@ console.log(getAge({ age: 35 }));
  * undefined와 null
  * 타입스크립트에서는 두 값이 완전 동일하다.
  */
+
+console.log(null == undefined);
+
+ /**
+ * 선택적 매개 변수
+ * 함수의 매개 변수 이름 뒤에 물음표를 붙여
+ * 선택적 매개 변수를 만들 수 있다.
+ * 
+ * function fn(arg1: string, arg2?: number): void {}
+ */
+
+function fn(arg1: string, arg2?: number): void {
+    console.log(`arg1: ${arg1} arg2: ${arg2}`);
+}
+
+fn('TypeScript', 5);
+fn('TypeScript');
+
+/**
+ * 선택적 매개 변수가 있는 함수의 시그니처는 물음표를 붙인다.
+ * 
+ * type OptionalArgFunc = (string, number?) => void
+ */
