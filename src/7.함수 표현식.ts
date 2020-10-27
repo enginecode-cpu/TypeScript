@@ -32,3 +32,12 @@ console.log(value);
  * 
  * const는 함수 내용이 절대 바뀔 수 없다.
  */
+
+/**
+ * 화살표 함수
+ * 
+ * const 함수 이름 = (매개 변수1: 타입1, 매개변수2: 타입2) : 반환 타입 => 함수 내용
+ */
+
+const arrowSum1 = (a: number, b: number): number => { return a + b; }
+const arrowSum2 = (a: number, b: number): number => a + b;
