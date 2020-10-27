@@ -3,11 +3,11 @@
  * const 변수 이름: 타입 = 초깃값
  */
 
-let n: number;
-let num: number = 1;
+let n: number
+let num: number = 1
 
-let str: string = 'Hello TypeScript';
-let obj: object = {};
+let str: string = 'Hello TypeScript'
+let obj: object = {}
 
 /**
  * let은 자바스크립트와 다르게 타입 주석으로 명시한 타입에 해당하는
@@ -21,11 +21,11 @@ let obj: object = {};
  * 따라 변수의 타입을 저장한다. 이것을 타입 추론이라고 한다
  */
 
-let x = 1;      // x 타입을 number로 판단
-let y = 2;      // y 타입을 number로 판단
+let x = 1      // x 타입을 number로 판단
+let y = 2      // y 타입을 number로 판단
 let b = true    // b 타입을 number로 판단
-let s = 'typescript'; // s 타입을 number로 판단
-let o = {};     // o 타입을 number로 판단
+let s = 'typescript' // s 타입을 number로 판단
+let o = {}     // o 타입을 number로 판단
 
 /**
  * any 타입
@@ -33,10 +33,10 @@ let o = {};     // o 타입을 number로 판단
  * 타입과 무관하게 어떤 종류의 값도 저장할 수 있다
  */
 
-let a: any = 0;
+let a: any = 0
 a = 'string type'
 a = true
-a = {};
+a = {}
 
 /**
  * undefined 타입
@@ -45,4 +45,4 @@ a = {};
  * undefined는 최하위 타입이다.
  */
 
-let u: undefined = undefined;
+let u: undefined = undefined

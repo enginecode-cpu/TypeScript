@@ -17,12 +17,12 @@ interface Student {
 let student1: Student = {
     name: '신짱구',
     age: 5
-};
+}
 
 let student2: Student = {
     name: '김철수',
     age: 5
-};
+}
 
 /**
  * 선택 속성 구문
@@ -56,13 +56,13 @@ let robot: {
     name: string
     age: number
     ect?: boolean
-} = { name: '로봇 신형만', age: 35 };
+} = { name: '로봇 신형만', age: 35 }
 
 /**
  * 익명 인터페이스는 함수를 구현할 때 많이 사용된다.
  */
 
 function printMe(me: {name: string, age: number }) {
-    console.log(`${me.name} ${me.age}`);
+    console.log(`${me.name} ${me.age}`)
 }
-printMe(robot);
+printMe(robot)

@@ -11,11 +11,11 @@
  */
 
 function add(a: number, b: number): number {
-    return a + b;
+    return a + b
 }
 
 function print(name: string, age: number): void {
-    console.log(`name: ${name}, age: ${age}`);
+    console.log(`name: ${name}, age: ${age}`)
 }
 
 /**
@@ -26,7 +26,7 @@ function print(name: string, age: number): void {
  */
 
 let print2: (name: string, age: number) => void = function (name: string, age: number): void {
-    console.log(`name: ${name}, age: ${age}`);
+    console.log(`name: ${name}, age: ${age}`)
 }
 
 /**
@@ -38,9 +38,9 @@ let print2: (name: string, age: number) => void = function (name: string, age: n
  * 잘못을 미연에 방지할 수 있다.
  */
 
-type stringNumberFunc = (stringValue: string, numberValue: number) => void;
-let f: stringNumberFunc = function(a: string, b: number): void {};
-let g: stringNumberFunc = function(c: string, d: number): void {};
+type stringNumberFunc = (stringValue: string, numberValue: number) => void
+let f: stringNumberFunc = function(a: string, b: number): void {}
+let g: stringNumberFunc = function(c: string, d: number): void {}
 
 /**
  * undefined 관련 주의 사항
@@ -48,10 +48,10 @@ let g: stringNumberFunc = function(c: string, d: number): void {};
  * interface INameable {
  *      name: string
  * }
- * function getName(o: INameable) { return o.name; }
+ * function getName(o: INameable) { return o.name }
  * 
- * let n = getName(undefined);    // Error
- * console.log(n);
+ * let n = getName(undefined)    // Error
+ * console.log(n)
  * 
  * 매개변수 값이 undefined인지 판별하는 코드를 작성해야한다.
  */
@@ -60,12 +60,12 @@ interface INameable {
     name: string
 }
 function getName(o: INameable): string {
-    return o != undefined ? o.name : 'unknown name';
+    return o != undefined ? o.name : 'unknown name'
 }
 
-let unName = getName(undefined);
-console.log(unName);
-console.log(getName({ name: '신짱구' }));
+let unName = getName(undefined)
+console.log(unName)
+console.log(getName({ name: '신짱구' }))
 
 /**
  * 선택 속성이 있을 경우
@@ -75,19 +75,19 @@ interface IAgeable {
     age?: number
 }
 function getAge(o: IAgeable): number {
-    return o != undefined && o.age ? o.age : 0;
+    return o != undefined && o.age ? o.age : 0
 }
 
-console.log(getAge(undefined));
-console.log(getAge(null));
-console.log(getAge({ age: 35 }));
+console.log(getAge(undefined))
+console.log(getAge(null))
+console.log(getAge({ age: 35 }))
 
 /**
  * undefined와 null
  * 타입스크립트에서는 두 값이 완전 동일하다.
  */
 
-console.log(null == undefined);
+console.log(null == undefined)
 
  /**
  * 선택적 매개 변수
@@ -98,11 +98,11 @@ console.log(null == undefined);
  */
 
 function fn(arg1: string, arg2?: number): void {
-    console.log(`arg1: ${arg1} arg2: ${arg2}`);
+    console.log(`arg1: ${arg1} arg2: ${arg2}`)
 }
 
-fn('TypeScript', 5);
-fn('TypeScript');
+fn('TypeScript', 5)
+fn('TypeScript')
 
 /**
  * 선택적 매개 변수가 있는 함수의 시그니처는 물음표를 붙인다.
