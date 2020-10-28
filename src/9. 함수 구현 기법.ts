@@ -18,3 +18,19 @@ const makePerson = (name: string, age: number = 5): Ps => {
 }
 console.log(makePerson('신짱구'))
 console.log(makePerson('신형만', 35))
+
+/**
+ * 객체 생성 시 값 부분을 생략할 수 있는 타입스크립트 구문
+ * 
+ * const makePerson = (name: string, age: number = 5): Ps => {name, age}
+ * 
+ * 컴파일러가 객체로 해석하게 하려면 객체를 소괄호로 감싸주어야한다.
+ * 
+ * const makePerson = (name: string, age: number = 5): Ps => ({name, age})
+ */
+
+type Ps2 = { name: string, age: number }
+
+const makePerson2 = (name: string, age: number = 5): Ps2 => ({name, age})
+console.log(makePerson2('신짱구'))
+console.log(makePerson2('신형만', 35))
