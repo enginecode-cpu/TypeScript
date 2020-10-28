@@ -46,3 +46,28 @@ const printPerson = ({name, age}: Ps2): void => {
     console.log(`name: ${name}, age: ${age}`)
 }
 printPerson({name: '김철수', age: 5})
+
+/**
+ * 색인 키와 값으로 객체 만들기
+ * ESNext 자바스크립트에서는 다음과 같은 코드를 작성할 수 있다
+ * 
+ * const makeObj = (key, value) => ({[key]: value})
+ */
+
+const makeObj = (key: string, value: string) => ({[key]: value})
+console.log(makeObj('name', '짱아'))
+console.log(makeObj('firstName', '신'))
+
+/**
+ * 타입스크립트에서는 {[key]: value} 형태의 타입을 '색인 가능 타입'이라고 한다.
+ * type KeyType = {
+ *     [key: string]: string
+ * }
+ */
+
+type KeyValueType = {
+    [key: string]: string
+}
+const makeObj2 = (key: string, value: string): KeyValueType => ({[key]: value})
+console.log(makeObj2('name', '봉미선'))
+console.log(makeObj2('name', '흰둥이'))
