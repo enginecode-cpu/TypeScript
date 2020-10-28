@@ -34,3 +34,15 @@ type Ps2 = { name: string, age: number }
 const makePerson2 = (name: string, age: number = 5): Ps2 => ({name, age})
 console.log(makePerson2('신짱구'))
 console.log(makePerson2('신형만', 35))
+
+/**
+ * 매개변수에 비구조화 할당문
+ * 
+ * 함수의 매개변수도 변수의 일종이므로 다음과 같이
+ * 비구조 할당문을 적용할 수 있다.
+ */
+
+const printPerson = ({name, age}: Ps2): void => {
+    console.log(`name: ${name}, age: ${age}`)
+}
+printPerson({name: '김철수', age: 5})
