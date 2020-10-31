@@ -43,3 +43,26 @@ class Example2 {
 
 let example2 = new Example2
 example2.method();
+
+/**
+ * 정적 메서드
+ * 
+ * 클래스의 속성에 static을 붙여 정적으로 만들 수 있다.
+ * 
+ * 호출 시, '클래스 이름.정적 메서드()' 형태로 한다.
+ */
+
+class Example3 {
+  static staticMethod() {
+    return 'I\'m static method in class Example3'
+  }
+}
+
+class Example4 {
+  static staticMethod() {
+    return 'I\'m static method in class Example4'
+  }
+}
+
+console.log(Example3.staticMethod())
+console.log(Example4.staticMethod())
