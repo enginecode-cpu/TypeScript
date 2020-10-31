@@ -3,26 +3,26 @@
  * 타입스크립트는 객체의 타입을 정의할 수 있게 하는
  * interface라는 키워드를 제공한다.
  * 중괄호({})로 속성과 속성의 타입 주석을 나열하는 형태이다.
- * 
+ *
  * interface 인터페이스 이름 {
  *  속성 이름[?]: 속성 타입[,...]
  * }
  */
 
 interface Student {
-    name: string
-    age: number
+  name: string;
+  age: number;
 }
 
 let student1: Student = {
-    name: '신짱구',
-    age: 5
-}
+  name: "신짱구",
+  age: 5,
+};
 
 let student2: Student = {
-    name: '김철수',
-    age: 5
-}
+  name: "김철수",
+  age: 5,
+};
 
 /**
  * 선택 속성 구문
@@ -32,20 +32,20 @@ let student2: Student = {
  */
 
 interface Family {
-    name: string
-    age: number
-    ect?: boolean
+  name: string;
+  age: number;
+  ect?: boolean;
 }
 
 let family1: Family = {
-    name: '신형만',
-    age: 35,
-}
+  name: "신형만",
+  age: 35,
+};
 let family2: Family = {
-    name: '봉미선',
-    age: 29,
-    ect: true
-}
+  name: "봉미선",
+  age: 29,
+  ect: true,
+};
 
 /**
  * 익명 인터페이스
@@ -53,16 +53,16 @@ let family2: Family = {
  */
 
 let robot: {
-    name: string
-    age: number
-    ect?: boolean
-} = { name: '로봇 신형만', age: 35 }
+  name: string;
+  age: number;
+  ect?: boolean;
+} = { name: "로봇 신형만", age: 35 };
 
 /**
  * 익명 인터페이스는 함수를 구현할 때 많이 사용된다.
  */
 
-function printMe(me: {name: string, age: number }) {
-    console.log(`${me.name} ${me.age}`)
+function printMe(me: { name: string; age: number }) {
+  console.log(`${me.name} ${me.age}`);
 }
-printMe(robot)
+printMe(robot);
