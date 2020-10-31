@@ -66,3 +66,26 @@ class Example4 {
 
 console.log(Example3.staticMethod())
 console.log(Example4.staticMethod())
+
+/**
+ * 메서드 체인
+ * 
+ * 객체의 메서드를 이어서 계속 호출하는 방식
+ * 메서드 체인을 구현하기 위해서는 항상 this를 반환하면 된다.
+ */
+
+class Calculator {
+  constructor(public value: number = 0) {}
+  add(value: number) {
+    this.value += value
+    return this
+  }
+  multiply(value: number) {
+    this.value *= value
+    return this
+  }
+}
+
+let calculator = new Calculator
+let answer = calculator.add(1).add(6).multiply(7).value
+console.log(answer)
