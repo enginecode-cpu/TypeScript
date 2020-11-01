@@ -27,3 +27,22 @@ type typePerson = {name: string, age?: number}
 const personArray: typePerson[] = [{name: '짱구'}, {name: '철수', age: 5}]
 
 console.log(personArray)
+
+/**
+ * 문자열과 배열 간 변환
+ * 
+ * 타입스크립트에서는 문자 타입이 없고, 문자열의 내용 또한 변경할 수 없다.
+ * 이런 특징 때문에 문자열을 배열로 변경해야한다.
+ * 
+ * 문자열을 배열로 전환할 때, String 클래스의 split 메서드를 사용한다.
+ * 
+ * split 메서드
+ * 문자열을 문자로 쪼개는 기준인 구분자를 입력받아 문자열을 string[] 배열로 만든다.
+ * 
+ * split(구분자: string): string[]
+ */
+
+const split = (str: string, delim: string = ''): string[] => str.split(delim)
+
+console.log(split('Hello'))
+console.log(split('TypeScript'))
