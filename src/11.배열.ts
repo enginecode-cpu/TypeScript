@@ -46,3 +46,14 @@ const split = (str: string, delim: string = ''): string[] => str.split(delim)
 
 console.log(split('Hello'))
 console.log(split('TypeScript'))
+
+/**
+ * 배열을 문자열로 변환할 때, Array에 join 메서드를 사용한다.
+ * 
+ * join(구분자: string): string
+ */
+
+const join = (strArray: string[], delim: string = ''): string => strArray.join(delim)
+
+console.log(join(['H', 'e', 'l', 'l', 'o']))
+console.log(join(['T', 'y', 'p', 'e', 'S', 'c', 'r', 'i', 'p', 't']))
