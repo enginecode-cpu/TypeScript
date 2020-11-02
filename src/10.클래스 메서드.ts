@@ -28,6 +28,7 @@ class Example1 {
 let example1: Example1 = new Example1
 example1.method()
 
+
 /**
  * 클래스 메서드 구문
  * 
@@ -43,6 +44,7 @@ class Example2 {
 
 let example2 = new Example2
 example2.method();
+
 
 /**
  * 정적 메서드
@@ -66,6 +68,7 @@ class Example4 {
 
 console.log(Example3.staticMethod())
 console.log(Example4.staticMethod())
+
 
 /**
  * 메서드 체인

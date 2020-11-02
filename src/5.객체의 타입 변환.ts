@@ -16,12 +16,12 @@
  */
 
 interface INameable {
-  name: string;
+  name: string
 }
 
-let nameObj: object = { name: "신짱구" };
+let nameObj: object = { name: "신짱구" }
 
-let name1 = (<INameable>nameObj).name;
-let name2 = (nameObj as INameable).name;
+let name1 = (<INameable>nameObj).name
+let name2 = (nameObj as INameable).name
 
-console.log(name1, name2);
+console.log(name1, name2)

@@ -6,14 +6,15 @@
  */
 
 class Person {
-  name: string;
-  age?: number;
+  name: string
+  age?: number
 }
 
-let hyungman: Person = new Person();
-hyungman.name = "형만";
-hyungman.age = 35;
-console.log(hyungman);
+let hyungman: Person = new Person()
+hyungman.name = "형만"
+hyungman.age = 35
+console.log(hyungman)
+
 
 /**
  * 접근 제한자
@@ -28,8 +29,9 @@ console.log(hyungman);
 class Person2 {
   constructor(public name: string, public age?: number) {}
 }
-let hyungman2: Person2 = new Person2("신형만", 35);
-console.log(hyungman2);
+let hyungman2: Person2 = new Person2("신형만", 35)
+console.log(hyungman2)
+
 
 /**
  * 위의 코드는 다음과 같다
@@ -56,29 +58,31 @@ console.log(hyungman2);
  */
 
 interface IPerson3 {
-  name: string;
-  age?: number;
+  name: string
+  age?: number
 }
 
 class Person3 implements IPerson3 {
-  name: string;
-  age: number;
+  name: string
+  age: number
 }
+
 
 /**
  * 다음과 같이 해도 된다.
  */
 interface IPerson4 {
-  name: string;
-  age?: number;
+  name: string
+  age?: number
 }
 
 class Person4 implements IPerson4 {
   constructor(public name: string, public age: number) {}
 }
 
-let jjang_gu: Person4 = new Person4("신짱구", 5);
-console.log(jjang_gu);
+let jjang_gu: Person4 = new Person4("신짱구", 5)
+console.log(jjang_gu)
+
 
 /**
  * 추상 클래스
@@ -95,9 +99,10 @@ console.log(jjang_gu);
  */
 
 abstract class AbstractPerson5 {
-  abstract name: string;
+  abstract name: string
   constructor(public age?: number) {}
 }
+
 
 /**
  * 클래스의 상속
@@ -112,12 +117,13 @@ abstract class AbstractPerson5 {
 
 class Person5 extends AbstractPerson5 {
   constructor(public name: string, public age?: number) {
-    super(age);
+    super(age)
   }
 }
 
-let chulsoo = new Person5("김철수", 5);
-console.log(chulsoo);
+let chulsoo = new Person5("김철수", 5)
+console.log(chulsoo)
+
 
 /**
  * static 속성
@@ -131,7 +137,7 @@ console.log(chulsoo);
  */
 
 class A {
-  static initValue = 1;
+  static initValue = 1
 }
-let initVal = A.initValue;
-console.log(initVal);
+let initVal = A.initValue
+console.log(initVal)

@@ -10,14 +10,15 @@
  * (매개변수: 타입 = 매개변수 기본값)
  */
 
-type Ps = { name: string; age: number };
+type Ps = { name: string, age: number }
 
 const makePerson = (name: string, age: number = 5): Ps => {
-  const person = { name: name, age: age };
-  return person;
-};
-console.log(makePerson("신짱구"));
-console.log(makePerson("신형만", 35));
+  const person = { name: name, age: age }
+  return person
+}
+console.log(makePerson("신짱구"))
+console.log(makePerson("신형만", 35))
+
 
 /**
  * 객체 생성 시 값 부분을 생략할 수 있는 타입스크립트 구문
@@ -29,11 +30,12 @@ console.log(makePerson("신형만", 35));
  * const makePerson = (name: string, age: number = 5): Ps => ({name, age})
  */
 
-type Ps2 = { name: string; age: number };
+type Ps2 = { name: string, age: number }
 
-const makePerson2 = (name: string, age: number = 5): Ps2 => ({ name, age });
-console.log(makePerson2("신짱구"));
-console.log(makePerson2("신형만", 35));
+const makePerson2 = (name: string, age: number = 5): Ps2 => ({ name, age })
+console.log(makePerson2("신짱구"))
+console.log(makePerson2("신형만", 35))
+
 
 /**
  * 매개변수에 비구조화 할당문
@@ -43,9 +45,10 @@ console.log(makePerson2("신형만", 35));
  */
 
 const printPerson = ({ name, age }: Ps2): void => {
-  console.log(`name: ${name}, age: ${age}`);
-};
-printPerson({ name: "김철수", age: 5 });
+  console.log(`name: ${name}, age: ${age}`)
+}
+printPerson({ name: "김철수", age: 5 })
+
 
 /**
  * 색인 키와 값으로 객체 만들기
@@ -54,9 +57,10 @@ printPerson({ name: "김철수", age: 5 });
  * const makeObj = (key, value) => ({[key]: value})
  */
 
-const makeObj = (key: string, value: string) => ({ [key]: value });
-console.log(makeObj("name", "짱아"));
-console.log(makeObj("firstName", "신"));
+const makeObj = (key: string, value: string) => ({ [key]: value })
+console.log(makeObj("name", "짱아"))
+console.log(makeObj("firstName", "신"))
+
 
 /**
  * 타입스크립트에서는 {[key]: value} 형태의 타입을 '색인 가능 타입'이라고 한다.
@@ -66,10 +70,10 @@ console.log(makeObj("firstName", "신"));
  */
 
 type KeyValueType = {
-  [key: string]: string;
-};
+  [key: string]: string
+}
 const makeObj2 = (key: string, value: string): KeyValueType => ({
   [key]: value,
-});
-console.log(makeObj2("name", "봉미선"));
-console.log(makeObj2("name", "흰둥이"));
+})
+console.log(makeObj2("name", "봉미선"))
+console.log(makeObj2("name", "흰둥이"))

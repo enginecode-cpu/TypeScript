@@ -9,6 +9,7 @@ let num: number = 1
 let str: string = 'Hello TypeScript'
 let obj: object = {}
 
+
 /**
  * let은 자바스크립트와 다르게 타입 주석으로 명시한 타입에 해당하는
  * 값으로만 바꿀 수 있다. 다른 타입으로 바꾸게 되면 오류가 발생한다.
@@ -27,6 +28,7 @@ let b = true    // b 타입을 number로 판단
 let s = 'typescript' // s 타입을 number로 판단
 let o = {}     // o 타입을 number로 판단
 
+
 /**
  * any 타입
  * 자바스크립트와의 호환성을 위해서 any 타입이 존재한다.
@@ -37,6 +39,7 @@ let a: any = 0
 a = 'string type'
 a = true
 a = {}
+
 
 /**
  * undefined 타입

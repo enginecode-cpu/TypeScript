@@ -2,14 +2,15 @@
  * 함수는 객체다
  */
 
-let sum = new Function("a", "b", "return a + b");
-const res = sum(1, 10);
-console.log(res);
+let sum = new Function("a", "b", "return a + b")
+const res = sum(1, 10)
+console.log(res)
 
 let sum2 = function (a: number, b: number) {
-  return a + b;
-};
-console.log(sum2(1, 10));
+  return a + b
+}
+console.log(sum2(1, 10))
+
 
 /**
  * 일등 함수
@@ -17,20 +18,22 @@ console.log(sum2(1, 10));
  */
 
 let fx = function (a: number, b: number) {
-  return a + b;
-};
+  return a + b
+}
 fx = function (a: number, b: number) {
-  return a - b;
-};
+  return a - b
+}
+
 
 /**
  * 익명 함수
  */
 
 let value = (function (a: number, b: number) {
-  return a + b;
-})(1, 2);
-console.log(value);
+  return a + b
+})(1, 2)
+console.log(value)
+
 
 /**
  * const 키워드와 함수 표현식
@@ -48,6 +51,6 @@ console.log(value);
  */
 
 const arrowSum1 = (a: number, b: number): number => {
-  return a + b;
-};
-const arrowSum2 = (a: number, b: number): number => a + b;
+  return a + b
+}
+const arrowSum2 = (a: number, b: number): number => a + b
