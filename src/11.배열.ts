@@ -157,3 +157,27 @@ console.log(
   isEmpty([]),
   isEmpty([1])
 )
+
+
+/**
+ * 제네릭 함수의 타입 추론
+ * 
+ * const identity = <T>(n: T): T => n
+ * 
+ * const trueValue = identity(<boolean>(true))
+ * const falseValue = identity(false)
+ * 
+ * 함수 이름<타입 변수>(매개변수)
+ * 
+ * 원칙적으로는 위와 같이 코드를 작성해야한다.
+ * 그러나 타입스크립트에서는 타입 변수 생략이 가능하다.
+ * 
+ */
+
+const identity = <T>(n: T): T => n
+
+const trueValue = identity(<boolean>(true))
+const falseValue = identity(false) // 타입 추론
+
+console.log(trueValue)
+console.log(falseValue)
