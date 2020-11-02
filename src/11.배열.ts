@@ -80,3 +80,44 @@ const numbers2: number[] = [1, 2, 3, 4, 5]
 const [first, second, third, ...rest] = numbers2
 console.log(`${first} ${second} ${third}`)
 console.log(rest)
+
+/**
+ * for...in 문
+ * 
+ * for(변수 in 객체) {
+ *   code...
+ * }
+ * 
+ * 배열도 객체이므로 사용할 수 있다.
+ * 배열의 인덱스값을 순회한다.
+ */
+
+const names: string[] = ['신짱구', '김철수', '흰둥이']
+
+for(let index in names) {
+  const name = names[index]
+  console.log(name)
+}
+
+/**
+ * 객체를 사용할 때는 객체가 가진 속성을 대상으로 순회한다.
+ */
+
+const dog = {name: '흰둥이', age: 5}
+for(let property in dog) {
+  console.log(`${property}: ${dog[property]}`)
+}
+
+/**
+ * for...of 문
+ * 
+ * for(let 변수 of 객체) {
+ *   code...
+ * }
+ * 
+ * for...of 문은 원소를 대상으로 순회를 한다.
+ */
+
+for(let name of names) {
+  console.log(name)
+}
