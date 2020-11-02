@@ -57,3 +57,26 @@ const join = (strArray: string[], delim: string = ''): string => strArray.join(d
 
 console.log(join(['H', 'e', 'l', 'l', 'o']))
 console.log(join(['T', 'y', 'p', 'e', 'S', 'c', 'r', 'i', 'p', 't']))
+
+/**
+ * 인덱스 연산자
+ * 
+ * 배열의 특정 위치에 있는 원소를 얻는다.
+ */
+
+const numbers: number[] = [1, 2, 3, 4, 5]
+for(let index = 0; index < numbers.length; index++) {
+  const item: number = numbers[index]
+  console.log(item)
+}
+
+/**
+ * 배열의 비구조화 할당
+ * 
+ * []를 사용하여 비구조 할당문을 얻는다.
+ */
+
+const numbers2: number[] = [1, 2, 3, 4, 5]
+const [first, second, third, ...rest] = numbers2
+console.log(`${first} ${second} ${third}`)
+console.log(rest)
