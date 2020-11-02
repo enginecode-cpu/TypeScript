@@ -122,7 +122,7 @@ tsc는 `tsconfig.json` 파일이 있는 디렉터리에서 실행된다.<br>
 
 `downlevelIteration` : `generator`를 사용하려면 반드시 `true`로 설정을 해야한다.<br>
 
-`noImplicitAny` : `false`로 설정하면 변수를 명시적으로 설정해주지 않다 `any` 타입으로 된다. 이것은 TypeScript의 장점이 아니므로, `true`로 설정하는 것이 좋다.<br>
+`noImplicitAny` : `false`로 설정하면 변수를 명시적으로 설정해주지 않다 `any` 타입으로 된다. 이것은 TypeScript의 장점이 아니므로, `true`로 설정하는 것이 좋다. `true`로 설정했다가 `Error`가 너무 많이 떠서 `false`로 변경했다.<br>
 
 <br>
 
