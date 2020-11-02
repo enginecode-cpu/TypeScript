@@ -121,3 +121,4 @@ for(let property in dog) {
 for(let name of names) {
   console.log(name)
 }
+
