@@ -9,6 +9,7 @@ const object = { name: '짱구', age: 5 }
 
 console.log(`arr: ${Array.isArray(arr)},`, `object: ${Array.isArray(object)}`)
 
+
 /**
  * 배열의 타입
  * 
@@ -27,6 +28,7 @@ type typePerson = {name: string, age?: number}
 const personArray: typePerson[] = [{name: '짱구'}, {name: '철수', age: 5}]
 
 console.log(personArray)
+
 
 /**
  * 문자열과 배열 간 변환
@@ -47,6 +49,7 @@ const split = (str: string, delim: string = ''): string[] => str.split(delim)
 console.log(split('Hello'))
 console.log(split('TypeScript'))
 
+
 /**
  * 배열을 문자열로 변환할 때, Array에 join 메서드를 사용한다.
  * 
@@ -57,6 +60,7 @@ const join = (strArray: string[], delim: string = ''): string => strArray.join(d
 
 console.log(join(['H', 'e', 'l', 'l', 'o']))
 console.log(join(['T', 'y', 'p', 'e', 'S', 'c', 'r', 'i', 'p', 't']))
+
 
 /**
  * 인덱스 연산자
@@ -70,6 +74,7 @@ for(let index = 0; index < numbers.length; index++) {
   console.log(item)
 }
 
+
 /**
  * 배열의 비구조화 할당
  * 
@@ -80,6 +85,7 @@ const numbers2: number[] = [1, 2, 3, 4, 5]
 const [first, second, third, ...rest] = numbers2
 console.log(`${first} ${second} ${third}`)
 console.log(rest)
+
 
 /**
  * for...in 문
@@ -99,6 +105,7 @@ for(let index in names) {
   console.log(name)
 }
 
+
 /**
  * 객체를 사용할 때는 객체가 가진 속성을 대상으로 순회한다.
  */
@@ -107,6 +114,7 @@ const dog = {name: '흰둥이', age: 5}
 for(let property in dog) {
   console.log(`${property}: ${dog[property]}`)
 }
+
 
 /**
  * for...of 문
@@ -122,3 +130,30 @@ for(let name of names) {
   console.log(name)
 }
 
+
+/**
+ * 제네릭 방식 타입
+ * 
+ * 배열을 다루는 함수를 작성할 때, number[]와 같이 타입이
+ * 고정된 함수를 만들기보다는 T[] 형태로 배열의 아이템 타입을
+ * 한꺼번에 표현하는 것이 편리하다. 이것을 제네릭 타입이라고 한다.
+ * 
+ * 컴파일러가 T의 의미를 알 수 있어야한다. 즉, T가 타입 변수라고 알려줘야한다.
+ */
+
+const arrayLength = <T>(array: T[]): number => array.length
+const isEmpty = <T>(array: T[]): boolean => arrayLength<T>(array) == 0
+
+const numArr: number[] = [1, 2, 3, 4, 5]
+const strArr: string[] = ['Hello', 'TypeScript']
+
+type MakePerson = { name: string, age?: number}
+const personArr = [{name: '흰둥이'}, {name: '맹구', age: 5}]
+
+console.log(
+  arrayLength(numArr),
+  arrayLength(strArr),
+  arrayLength(personArr),
+  isEmpty([]),
+  isEmpty([1])
+)
