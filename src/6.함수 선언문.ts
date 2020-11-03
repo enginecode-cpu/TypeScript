@@ -18,6 +18,7 @@ function print(name: string, age: number): void {
   console.log(`name: ${name}, age: ${age}`)
 }
 
+
 /**
  * 함수 시그니쳐
  * 함수의 타입을 시그니쳐라고 한다.
@@ -32,6 +33,7 @@ let print2: (name: string, age: number) => void = function (
   console.log(`name: ${name}, age: ${age}`)
 }
 
+
 /**
  * type 키워드로 타입 별칭 만들기
  *
@@ -44,6 +46,7 @@ let print2: (name: string, age: number) => void = function (
 type stringNumberFunc = (stringValue: string, numberValue: number) => void
 let f: stringNumberFunc = function (a: string, b: number): void {}
 let g: stringNumberFunc = function (c: string, d: number): void {}
+
 
 /**
  * undefined 관련 주의 사항
@@ -69,6 +72,7 @@ function getName(o: INameable): string {
 let unName = getName(undefined)
 console.log(unName)
 console.log(getName({ name: "신짱구" }))
+
 
 /**
  * 선택 속성이 있을 경우
