@@ -190,3 +190,14 @@ console.log(falseValue)
  * 
  * const f = <T>(cb: (arg: T, i?:number) => number): void => {}
  */
+
+
+/**
+ * 전개 연산자
+ * 
+ * ...를 사용한 연산자. 두 배열과 특정 값을 동시에 결할 할 수 있다.
+ */
+const array1: number[] = [1]
+const array2: number[] = [2, 3]
+const mergeArray: number[] = [...array1, ...array2, 4]
+console.log(mergeArray)
