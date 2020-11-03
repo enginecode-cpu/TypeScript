@@ -181,3 +181,12 @@ const falseValue = identity(false) // 타입 추론
 
 console.log(trueValue)
 console.log(falseValue)
+
+
+/**
+ * 제네릭 함수의 함수 시그니쳐
+ * 
+ * 다음과 같이 사용하면 된다.
+ * 
+ * const f = <T>(cb: (arg: T, i?:number) => number): void => {}
+ */
