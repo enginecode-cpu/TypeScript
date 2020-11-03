@@ -201,3 +201,17 @@ const array1: number[] = [1]
 const array2: number[] = [2, 3]
 const mergeArray: number[] = [...array1, ...array2, 4]
 console.log(mergeArray)
+
+
+/**
+ * range 함수의 구현
+ * 
+ * ramda라는 외부 패키지가 제공하는 R.range란 함수가 있다.
+ * 이 함수를 배열에 전개 연산자를 적용하면 R.range와 같은 함수를 쉽게 만들 수 있다. 
+ */
+
+const range = (from: number, to: number): number[] => 
+  from < to ? [from, ...range(from + 1, to)] : []
+
+const numbers3 = range(1, 9 + 1)
+console.log(numbers3)
