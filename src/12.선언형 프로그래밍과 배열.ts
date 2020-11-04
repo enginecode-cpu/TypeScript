@@ -33,6 +33,7 @@ const fold = <T>(array: T[], callback: (result: T, val: T) => T, initValue: T) =
   return result
 }
 
+import { T } from 'ramda'
 import { range } from './11.배열'
 
 // 입력 데이터 생성
@@ -88,3 +89,30 @@ let numbers7: number[] = range(0, 100 + 1)
 const isEven = (n: number): boolean => n % 2 == 0
 const result3 = fold(filter(numbers7, isEven), (result, value) => result + value, 0)
 console.log(result3)
+
+
+/**
+ * 제곱의 합 구하기
+ */
+
+// 명령형
+let squareSum = 0
+for(let val = 1; val <= 100; ++val) {
+  squareSum += val ** 2
+}
+console.log(squareSum)
+
+// 선언형
+// 1. map: 배열 데이터 가공하기
+const map = <T, Q>(array: T[], callback: (value: T, index?: number) => Q): Q[] => {
+  let result: Q[] = []
+  for(let index = 0; index < array.length; ++index) {
+    const value = array[index]
+    result = [...result, callback(value, index)]
+  }
+  return result
+}
+
+let numbers8: number[] = range(1, 100 + 1)
+let result4 = fold(map(numbers8, value => value ** 2), (result, value) => result + value, 0)
+console.log(result4)
