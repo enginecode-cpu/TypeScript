@@ -68,5 +68,23 @@ const filter = <T>(array: T[], callback: (value: T, index?: number) => boolean):
 // 2. 합 구현하기
 let numbers6: number[] = range(1, 100 + 1)
 const isOdd = (n: number): boolean => n % 2 != 0
-let result2 = fold(filter(numbers6, isOdd), (result, value) => result + value, 0)
+const result2 = fold(filter(numbers6, isOdd), (result, value) => result + value, 0)
 console.log(result2)
+
+
+/**
+ * 1에서 100까지 짝수의 합 구하기
+ */
+
+// 명령형
+let evenSum = 0
+for(let val = 0; val <= 100; val += 2) {
+  evenSum += val
+}
+console.log(evenSum)
+
+// 선언형
+let numbers7: number[] = range(0, 100 + 1)
+const isEven = (n: number): boolean => n % 2 == 0
+const result3 = fold(filter(numbers7, isEven), (result, value) => result + value, 0)
+console.log(result3)
