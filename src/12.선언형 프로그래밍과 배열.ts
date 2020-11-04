@@ -33,7 +33,6 @@ const fold = <T>(array: T[], callback: (result: T, val: T) => T, initValue: T) =
   return result
 }
 
-import { T } from 'ramda'
 import { range } from './11.배열'
 
 // 입력 데이터 생성
