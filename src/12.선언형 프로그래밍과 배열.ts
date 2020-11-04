@@ -33,7 +33,7 @@ const fold = <T>(array: T[], callback: (result: T, val: T) => T, initValue: T) =
   return result
 }
 
-import {range} from './11.배열'
+import { range } from './11.배열'
 
 // 입력 데이터 생성
 let numbers5: number[] = range(1, 100 + 1)
@@ -41,3 +41,32 @@ let numbers5: number[] = range(1, 100 + 1)
 // 입력 데이터 가공
 let result = fold(numbers5, (result, value) => result + value, 0)
 console.log(result)
+
+/**
+ * 1에서 100까지 홀수의 합 구하기
+ */
+
+// 명령형
+let oddSum = 0
+for(let val = 1; val <= 100; val += 2) {
+  oddSum += val
+}
+console.log(oddSum)
+
+// 선언형
+// 1. filter: 조건에 맞는 아이템 골라내기
+const filter = <T>(array: T[], callback: (value: T, index?: number) => boolean): T[] => {
+  let result: T[] = []
+  for(let index: number = 0; index < array.length; ++index) {
+    const value = array[index]
+    if(callback(value, index))
+      result = [...result, value]
+  }
+  return result
+}
+
+// 2. 합 구현하기
+let numbers6: number[] = range(1, 100 + 1)
+const isOdd = (n: number): boolean => n % 2 != 0
+let result2 = fold(filter(numbers6, isOdd), (result, value) => result + value, 0)
+console.log(result2)
