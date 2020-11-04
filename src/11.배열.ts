@@ -210,8 +210,7 @@ console.log(mergeArray)
  * 이 함수를 배열에 전개 연산자를 적용하면 R.range와 같은 함수를 쉽게 만들 수 있다. 
  */
 
-export const range = (from: number, to: number): number[] => 
-  from < to ? [from, ...range(from + 1, to)] : []
+import { range } from './range'
 
 const numbers3 = range(1, 9 + 1)
 console.log(numbers3)

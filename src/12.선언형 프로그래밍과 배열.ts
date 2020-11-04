@@ -24,17 +24,8 @@
  * 폴드 함수는 T[] 타입 배열을 가공해 T 타입 결과로 만든다.
  */
 
-const fold = <T>(array: T[], callback: (result: T, val: T) => T, initValue: T) => {
-  let result: T = initValue
-  for(let index = 0; index < array.length; ++index) {
-    const value = array[index]
-    result = callback(result, value)
-  }
-  return result
-}
-
-import { range } from './11.배열'
-
+import { range } from './range'
+import { fold } from './fold'
 // 입력 데이터 생성
 let numbers5: number[] = range(1, 100 + 1)
 
@@ -55,15 +46,7 @@ console.log(oddSum)
 
 // 선언형
 // 1. filter: 조건에 맞는 아이템 골라내기
-const filter = <T>(array: T[], callback: (value: T, index?: number) => boolean): T[] => {
-  let result: T[] = []
-  for(let index: number = 0; index < array.length; ++index) {
-    const value = array[index]
-    if(callback(value, index))
-      result = [...result, value]
-  }
-  return result
-}
+import { filter } from './filter'
 
 // 2. 합 구현하기
 let numbers6: number[] = range(1, 100 + 1)
@@ -103,14 +86,7 @@ console.log(squareSum)
 
 // 선언형
 // 1. map: 배열 데이터 가공하기
-const map = <T, Q>(array: T[], callback: (value: T, index?: number) => Q): Q[] => {
-  let result: Q[] = []
-  for(let index = 0; index < array.length; ++index) {
-    const value = array[index]
-    result = [...result, callback(value, index)]
-  }
-  return result
-}
+import { map } from './map'
 
 let numbers8: number[] = range(1, 100 + 1)
 let result4 = fold(map(numbers8, value => value ** 2), (result, value) => result + value, 0)
