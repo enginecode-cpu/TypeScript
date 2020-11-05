@@ -47,3 +47,17 @@ console.log(squares)
 
 let names: string[] = range(1, 5 + 1).map((val, index) => `[${index}]: ${val}`)
 console.log(names)
+
+/**
+ * reduce 메서드
+ * fold 함수는 배열의 reduce 함수로 대체할 수 있다.
+ * 배열의 타입이 T[]일 때, 다음과 같이 설계되어 있다.
+ * 
+ * reduce(callback: (result: T, value: T), initValue: T): T
+ */
+
+const reduceSum: number = range(1, 100 + 1).reduce((result: number, value: number) => result + value, 0)
+console.log(reduceSum)
+
+const reduceMul: number = range(1, 10 + 1).reduce((result: number, value: number) => result * value, 1)
+console.log(reduceMul)
