@@ -23,3 +23,30 @@ function imppure1(array: number[]): void {
 }
 let glob = 10;
 function impure2(x: number) {return x + glob}
+
+/**
+ * 타입 수정자 readonly
+ * 매개 변수에 let이나 const 키워드가 없으므로 readonly를 사용하는 것이다.
+ * readonly는 const와 같이 불변이다.
+ */
+
+/**
+ * 깊은 복사와 얕은 복사
+ * 순수 함수를 구현할 때는 매개변수가 불변성을 유지해야 하므로 깊은 복사를 해야한다.
+ * 깊은 복사를 하여 매개변수값이 변경되지 않도록 해야한다. 즉, 원본이 변경되지 않는다. 
+ */
+
+let original = 1
+let copied = original
+copied += 2
+console.log(original, copied)
+
+/**
+ * 객체와 배열은 얕은 복사 방식으로 동작한다.
+ */
+
+const originArray = [5, 2, 9, 7]
+const copiedArray = originArray
+copiedArray[0] = 0
+console.log(originArray, copiedArray)
+console.log(originArray == copiedArray)
