@@ -41,6 +41,7 @@ let copied = original
 copied += 2
 console.log(original, copied)
 
+
 /**
  * 객체와 배열은 얕은 복사 방식으로 동작한다.
  */
@@ -50,3 +51,14 @@ const copiedArray = originArray
 copiedArray[0] = 0
 console.log(originArray, copiedArray)
 console.log(originArray == copiedArray)
+
+
+/** 
+ * 전개 연산자와 깊은 복사
+ * 전개 연산자를 이용하면 깊은 복사를 할 수 있다.
+*/
+
+const originArray2 = [1, 2, 3, 4]
+const deepCopiedArray = [...originArray2]
+deepCopiedArray[0] = 0
+console.log(originArray2, deepCopiedArray)
