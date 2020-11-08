@@ -68,8 +68,35 @@ console.log(originArray2, deepCopiedArray)
  * 원본 배열을 변경하지 않는 sort 함수
  */
 
-import { pureSort } from './sort'
+import { pureSort } from './pureSort'
 
 let beforeArray = [9, 3, 4, 1, 5]
 const afterArray = pureSort(beforeArray)
 console.log(beforeArray, afterArray)
+
+
+/**
+ * 원본 배열을 변경하지 않는 삭제 함수
+ */
+
+ import { pureDelete } from './pureDelete'
+
+ const mixedArray: object[] = [
+   [], {name: '신짱구'}, {name: '김철수', age: 5}, ['description']
+ ]
+
+const objectOnly: object[] = pureDelete(mixedArray, (val) => Array.isArray(val))
+console.log(mixedArray, objectOnly)
+
+
+/**
+ * 가변 인자를 이용한 mergeArray
+ */
+
+import { mergeArray } from './mergeArray'
+
+const mergeArray1: string[] = mergeArray(['Hello'], ['TypeScript'])
+console.log(mergeArray1)
+
+const mergeArray2: number[] = mergeArray([1], [2, 3], [4, 5, 6], [7, 8, 9, 10])
+console.log(mergeArray2)
