@@ -62,3 +62,14 @@ const originArray2 = [1, 2, 3, 4]
 const deepCopiedArray = [...originArray2]
 deepCopiedArray[0] = 0
 console.log(originArray2, deepCopiedArray)
+
+
+/**
+ * 원본 배열을 변경하지 않는 sort 함수
+ */
+
+import { pureSort } from './sort'
+
+let beforeArray = [9, 3, 4, 1, 5]
+const afterArray = pureSort(beforeArray)
+console.log(beforeArray, afterArray)
