@@ -62,3 +62,41 @@ const iterable = new RangeIterable(5, 10 + 1)
 for (let value of iterable)
   console.log(value)
 
+
+/**
+ * Iterable<T>와 Iterator<T> 인터페이스
+ * Iterable<T>와 Iterator<T> 제네릭 인터페이스를 사용할 수 있다.
+ * 
+ * Iterable<T>는 자신을 구현하는 클래스가 [Symbol.iterator] 메서드를
+ * 제공한다는 것을 명확하게 알려주는 역할을 한다.
+ * 
+ * class 구현 클래스 implements Iterable<생성할 값의 타입> {}
+ * 
+ * 
+ * Iterator<T>는 반복기가 생성할 값의 타입을 명확하게 한다.
+ * 
+ * [Symbol.iterator](): Iterator<생성할 값의 타입> {}
+ */
+
+class StringIterable implements Iterable<string> {
+  constructor(private strings: string[] = [], private currentIndex: number = 0) {}
+  [Symbol.iterator](): Iterator<string> {
+    const that = this
+    let currentIndex = that.currentIndex
+    let length = that.strings.length
+
+    const iterator: Iterator<string> = {
+      next(): {value: string, done: boolean} {
+        const value = currentIndex < length ? that.strings[currentIndex++] : undefined
+        const done = value == undefined
+
+        return {value, done}
+      }
+    }
+
+    return iterator
+  }
+}
+
+for (let value of new StringIterable(['hello', 'world', '!']))
+  console.log(value)
