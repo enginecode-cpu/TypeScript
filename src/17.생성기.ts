@@ -64,3 +64,23 @@ for (let item of new IterableUsingGenerator([1, 2, 3]))
 
 for (let item of new IterableUsingGenerator(['hello', 'world', '!']))
   console.log(item)
+
+
+/**
+ * yield* 키워드
+ * 다른 생성기나 배열을 대상으로 한다.
+ */
+
+function* gen12() {
+  yield 1
+  yield 2
+}
+
+function* gen12345() {
+  yield* gen12()
+  yield* [3, 4]
+  yield 5
+}
+
+for (let value of gen12345())
+  console.log(value) // 1 2 3 4 5
