@@ -84,3 +84,24 @@ function* gen12345() {
 
 for (let value of gen12345())
   console.log(value) // 1 2 3 4 5
+
+
+/**
+ * yield 연산자는 값을 반환한다.
+ */
+
+function* gen() {
+  let count = 5
+  let select = 0
+  while (count--) {
+    select = yield `you select ${select}`
+  }
+}
+const random = (max, min=0) => Math.round(Math.random() * (max - min)) + min
+
+const iter = gen()
+while (1) {
+  const {value, done} = iter.next(random(10, 1))
+  if (done) break
+  console.log(value)
+}
