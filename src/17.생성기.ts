@@ -16,3 +16,51 @@ function* generator() {
 for (let value of generator()) {
   console.log(value)
 }
+
+
+/**
+ * function* 키워드
+ * 화살표 함수로 생성기를 만들 수 없다.
+ * 
+ * yield 키워드
+ *   1. 반복기를 자동으로 만들어준다.
+ *   2. 반복기 제공자 역할도 수행한다.
+ */
+
+function* rangeGenerator(from: number, to: number) {
+  let value = from
+  while(value < to) {
+    yield value++
+  }
+}
+
+// while 패턴으로 동작하는 생성기
+let iterator = rangeGenerator(1, 3 + 1)
+while (1) {
+  const {value, done} = iterator.next()
+  if (done) break
+  console.log(value) // 1 2 3
+} 
+
+// for ... of 패턴으로 동작하는 생성기
+for (let value of rangeGenerator(4, 6 + 1))
+  console.log(value) // 4 5 6
+
+
+/** 
+ * 생성기를 이용한 stringIterable class 
+ */
+
+class IterableUsingGenerator<T> implements Iterable<T> {
+  constructor(private values: T[], private currentIndex: number = 0) {}
+  [Symbol.iterator] = function* () {
+    while (this.currentIndex < this.values.length)
+      yield this.values[this.currentIndex++]
+  }
+}
+
+for (let item of new IterableUsingGenerator([1, 2, 3]))
+  console.log(item) // 1 2 3
+
+for (let item of new IterableUsingGenerator(['hello', 'world', '!']))
+  console.log(item)
